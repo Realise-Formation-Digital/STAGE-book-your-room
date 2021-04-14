@@ -1,21 +1,60 @@
 <template>
-  <v-app>
-    <v-card>
-      <h1>Bonjour à tous !</h1>
-    </v-card>
+  <div>
+    <v-main>
+    <HeaderKilian/>
+    <carrosel/>
     
-  </v-app>
+    HELLOO
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+    
+    </v-main>
+
+
+
+    
+    <footerKilian/>
+  </div>
 </template>
 
 <script>
+
+import Carrosel from './carrosel.vue'
+import footerKilian from './FooterKilian.vue'
+import HeaderKilian from './HeaderKilian.vue'
+
+
 export default {
-  data() {}
-  }
+  components: { footerKilian, HeaderKilian, Carrosel, },
+  data() {
+    return {
+      counter: 0,
+    }
+  },
+  methods: {
+    increment() {
+      this.counter += 1
+      //Meter.call('insertLink', 'LinkTitle', 'linkUrl', 1)
+    }
+  },
+}
 </script>
 
 <style scoped>
-h1{
-  padding-left: 43%;
-  color: darkblue;
+  p {
+    font-family: serif;
   }
 </style>
