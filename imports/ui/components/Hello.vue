@@ -1,27 +1,21 @@
 <template>
-  <div>
-    <button @click="increment">Click Me</button>
-    <p>You've pressed the button {{counter}} times.</p>
-  </div>
+  <v-app>
+    <v-card>
+      <h1>Bonjour à tous !</h1>
+    </v-card>
+    
+  </v-app>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      counter: 0,
-    }
-  },
-  methods: {
-    increment() {
-      this.counter += 1
-    }
-  },
-}
+  data() {}
+  }
 </script>
 
 <style scoped>
-  p {
-    font-family: serif;
+h1{
+  padding-left: 43%;
+  color: darkblue;
   }
 </style>
