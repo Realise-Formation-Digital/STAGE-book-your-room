@@ -1,8 +1,8 @@
-import meteor from 'meteor/meteor';
+import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
-import Room from '../collections/rooms.js';
+import Room from '../collections/Rooms.js';
 
-meteor.methods({
+Meteor.methods({
 
     /**
      * Insert one room into the database
@@ -35,13 +35,14 @@ meteor.methods({
      * @param {String} room_equipement -  the accessories of the room
      * @returns 
      */
-    'edit_room' (room_name, id_building, room_floor, room_equipement) {
+    'edit_room' (idRoom, room_name, id_building, room_floor, room_equipement) {
+        check(idRoom, String);
         check(room_name, String);
         check(id_building, String);
         check(room_floor, Number);
         check(room_equipement, String);
 
-        return Room.update({'_id': }, {
+        return Room.update({'_id': idRoom}, {
             'Room_Name': room_name,
             'Room_Equipement': room_equipement,
         });

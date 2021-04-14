@@ -1,9 +1,9 @@
 import { Meteor } from 'meteor/meteor';
-import Links from './collections/Links.js';
+//import Links from './collections/Links.js';
 
 Meteor.startup(() => {
   // if the Links collection is empty
-  if (Links.find().count() === 0) {
+  /*if (Links.find().count() === 0) {
     const data = [
       {
         title: 'Do the Tutorial',
@@ -28,5 +28,5 @@ Meteor.startup(() => {
     ];
 
     data.forEach(link => Links.insert(link));
-  }
+  }*/
 });

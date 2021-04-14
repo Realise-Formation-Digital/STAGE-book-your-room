@@ -1,4 +1,4 @@
-import { assert } from 'chai'
+/*import { assert } from 'chai'
 import { PublicationCollector } from 'meteor/johanbrook:publication-collector'
 import Links from '../collections/Links.js'
 import './publications.js'
@@ -20,3 +20,4 @@ describe('Publish links', function () {
     })
   })
 })
+*/
