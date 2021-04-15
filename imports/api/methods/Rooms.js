@@ -16,35 +16,40 @@ Meteor.methods({
         check(room_name, String);
         check(id_building, String);
         check(room_floor, Number);
-        check(room_equipement, String);
+        check(room_equipement, [String]);
+
+        console.log("[Rooms][insert_room] Inserting rooms with params", room_name, id_building, room_floor, room_equipement)
 
         return Room.insert({
-            'Room_Name': room_name,
+            'room_name': room_name,
             'idBuilding': id_building,
-            room_floor,
-            room_equipement,
+            'room_floor': room_floor,
+            'room_equipment': room_equipement,
         });
 
     },
 
     /**
      * Edit one room into the database
+     * @param {String} id_room - te id of the updated room
      * @param {String} room_name - the name of the room
      * @param {String} id_building - the id of the building where the room is
      * @param {Number} room_floor - the floor where the room is
      * @param {String} room_equipement -  the accessories of the room
-     * @returns 
+     * @returns
      */
-    'edit_room' (idRoom, room_name, id_building, room_floor, room_equipement) {
-        check(idRoom, String);
+    'edit_room' (id_room, room_name, id_building, room_floor, room_equipement) {
+        check(id_room, String);
         check(room_name, String);
         check(id_building, String);
         check(room_floor, Number);
         check(room_equipement, String);
 
-        return Room.update({'_id': idRoom}, {
-            'Room_Name': room_name,
-            'Room_Equipement': room_equipement,
+        console.log("[Rooms][edit_room] Updating rooms with params", room_name, id_building, room_floor, room_equipement)
+
+        return Room.update({'_id': id_room}, {
+            'room_name': room_name,
+            'room_equipement': room_equipement,
         });
 
     },
@@ -56,12 +61,9 @@ Meteor.methods({
      */
     'delete_room' (id_room) {
         check(id_room, String);
- 
-
         return Room.remove({
             '_id': id_room
         });
-
     },
 
 })
