@@ -50,7 +50,7 @@ Meteor.methods({
     },
 
      /**
-     * Edit one room into the database
+     * Delete one room into the database
      * @param {_id} id_room - the room id
      * @returns 
      */
