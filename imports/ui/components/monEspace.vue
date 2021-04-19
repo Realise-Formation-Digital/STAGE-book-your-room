@@ -22,11 +22,11 @@
 </template>
 
 <script>
-import sideBar from './sideBar.vue'
+import sideBar from '../layout/Sidebar.vue'
 import calendrier from './calendrier.vue'
 import Carrosel from './carrosel.vue'
-import footerKilian from './FooterKilian.vue'
-import HeaderKilian from './HeaderKilian.vue'
+import footerKilian from '../layout/Footerbar.vue'
+import HeaderKilian from '../layout/Headerbar.vue'
 
 
 export default {
