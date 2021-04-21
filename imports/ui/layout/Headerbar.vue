@@ -1,40 +1,58 @@
 <template>
   <div>
     <v-toolbar
-      dark
-      prominent
-      src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+        dark
+        prominent
+        src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
     >
       <v-app-bar-nav-icon>
-        
+
+        <v-btn
+            class="mx-2"
+            dark
+            medium
+            color="green"
+        >
+          <v-icon dark>
+            mdi-home
+          </v-icon>
+        </v-btn>
+
+
+      </v-app-bar-nav-icon>
+
+      <v-toolbar-title> Bienvenue sur BookYou'Room</v-toolbar-title>
+
+      <v-spacer/>
+
       <v-btn
-        class="mx-2"
-        fab
-        dark
-        medium
-        color="green"
-      >
-        <v-icon dark>
-          mdi-home
-        </v-icon>
+          color="primary"
+          dark
+          class="headline"
+          to="/buildings"
+      > Buildings
       </v-btn>
-    
-   
-   </v-app-bar-nav-icon>
-      
-
-      <v-toolbar-title> Bienvenue sur BookYou'Room </v-toolbar-title>
-
-      <v-spacer> </v-spacer>
+      <v-btn
+          color="primary"
+          dark
+          class="headline"
+          to="/rooms"> Rooms
+      </v-btn>
+      <v-btn
+          color="primary"
+          dark
+          class="headline"
+          to="/contactUs"> Contact Us
+      </v-btn>
 
       <div class="text-center d-flex align-center justify-space-around">
         <v-tooltip left>
           <template v-slot:activator="{ on, attrs }">
             <v-btn color="primary" dark v-bind="attrs" v-on="on"
-            @click="showDialogConnectezVous()"
-            class="headline">Se connecter
-            
-              
+                   @click="showDialogConnectezVous()"
+                   class="headline">Se connecter
+
+
             </v-btn>
           </template>
           <span>Connectez-vous</span>
@@ -45,12 +63,12 @@
         <v-tooltip left>
           <template v-slot:activator="{ on, attrs }">
             <v-btn
-              color="primary"
-              dark
-              v-bind="attrs"
-              v-on="on"
-              @click="showDialogCompte()"
-              class="headline"> Créer son compte
+                color="primary"
+                dark
+                v-bind="attrs"
+                v-on="on"
+                @click="showDialogCompte()"
+                class="headline"> Créer son compte
             </v-btn>
           </template>
           <span>Pas encore de compte ?</span>
@@ -62,12 +80,11 @@
       </v-btn>
     </v-toolbar>
 
-
-<!-- Formulaire CONNEXION -->
+    <!-- Formulaire CONNEXION -->
 
     <v-dialog
-      v-model="dialogConnexion"
-      max-width="600px"
+        v-model="dialogConnexion"
+        max-width="600px"
     >
       <v-card>
         <v-card-title>
@@ -77,68 +94,68 @@
           <v-container>
             <v-row>
               <v-col
-                cols="12"
-                sm="6"
-                md="4"
+                  cols="12"
+                  sm="6"
+                  md="4"
               >
                 <v-text-field
-                  label="Legal first name*"
-                  required
+                    label="Legal first name*"
+                    required
                 ></v-text-field>
               </v-col>
               <v-col
-                cols="12"
-                sm="6"
-                md="4"
+                  cols="12"
+                  sm="6"
+                  md="4"
               >
                 <v-text-field
-                  label="Legal middle name"
-                  hint="example of helper text only on focus"
+                    label="Legal middle name"
+                    hint="example of helper text only on focus"
                 ></v-text-field>
               </v-col>
               <v-col
-                cols="12"
-                sm="6"
-                md="4"
+                  cols="12"
+                  sm="6"
+                  md="4"
               >
                 <v-text-field
-                  label="Legal last name*"
-                  hint="example of persistent helper text"
-                  persistent-hint
-                  required
+                    label="Legal last name*"
+                    hint="example of persistent helper text"
+                    persistent-hint
+                    required
                 ></v-text-field>
               </v-col>
               <v-col cols="12">
                 <v-text-field
-                  label="Email*"
-                  required
+                    label="Email*"
+                    required
                 ></v-text-field>
               </v-col>
               <v-col cols="12">
                 <v-text-field
-                  label="Password*"
-                  type="password"
-                  required
+                    label="Password*"
+                    type="password"
+                    required
                 ></v-text-field>
               </v-col>
               <v-col
-                cols="12"
-                sm="6"
+                  cols="12"
+                  sm="6"
               >
                 <v-select
-                  :items="['0-17', '18-29', '30-54', '54+']"
-                  label="Age*"
-                  required
+                    :items="['0-17', '18-29', '30-54', '54+']"
+                    label="Age*"
+                    required
                 ></v-select>
               </v-col>
               <v-col
-                cols="12"
-                sm="6"
+                  cols="12"
+                  sm="6"
               >
                 <v-autocomplete
-                  :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
-                  label="Interests"
-                  multiple
+                    :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
+                    label="Interests"
+                    multiple
                 ></v-autocomplete>
               </v-col>
             </v-row>
@@ -148,17 +165,17 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-            color="blue darken-1"
-            text
-            @click="cacheDialogConnectezVous()"
+              color="blue darken-1"
+              text
+              @click="cacheDialogConnectezVous()"
           >
             Suivant
           </v-btn>
           <v-btn
-            color="blue darken-1"
-            text
-            to="/monEspace.vue"
-            >
+              color="blue darken-1"
+              text
+              to="/monEspace.vue"
+          >
             Save
           </v-btn>
         </v-card-actions>
@@ -166,12 +183,11 @@
     </v-dialog>
 
 
-
-<!-- Formulaire CREER SON COMPTE -->
+    <!-- Formulaire CREER SON COMPTE -->
 
     <v-dialog
-      v-model="dialogCompte"
-      max-width="600px"
+        v-model="dialogCompte"
+        max-width="600px"
     >
       <v-card>
         <v-card-title>
@@ -181,68 +197,68 @@
           <v-container>
             <v-row>
               <v-col
-                cols="12"
-                sm="6"
-                md="4"
+                  cols="12"
+                  sm="6"
+                  md="4"
               >
                 <v-text-field
-                  label="Legal first name*"
-                  required
+                    label="Legal first name*"
+                    required
                 ></v-text-field>
               </v-col>
               <v-col
-                cols="12"
-                sm="6"
-                md="4"
+                  cols="12"
+                  sm="6"
+                  md="4"
               >
                 <v-text-field
-                  label="Legal middle name"
-                  hint="example of helper text only on focus"
+                    label="Legal middle name"
+                    hint="example of helper text only on focus"
                 ></v-text-field>
               </v-col>
               <v-col
-                cols="12"
-                sm="6"
-                md="4"
+                  cols="12"
+                  sm="6"
+                  md="4"
               >
                 <v-text-field
-                  label="Legal last name*"
-                  hint="example of persistent helper text"
-                  persistent-hint
-                  required
+                    label="Legal last name*"
+                    hint="example of persistent helper text"
+                    persistent-hint
+                    required
                 ></v-text-field>
               </v-col>
               <v-col cols="12">
                 <v-text-field
-                  label="Email*"
-                  required
+                    label="Email*"
+                    required
                 ></v-text-field>
               </v-col>
               <v-col cols="12">
                 <v-text-field
-                  label="Password*"
-                  type="password"
-                  required
+                    label="Password*"
+                    type="password"
+                    required
                 ></v-text-field>
               </v-col>
               <v-col
-                cols="12"
-                sm="6"
+                  cols="12"
+                  sm="6"
               >
                 <v-select
-                  :items="['0-17', '18-29', '30-54', '54+']"
-                  label="Age*"
-                  required
+                    :items="['0-17', '18-29', '30-54', '54+']"
+                    label="Age*"
+                    required
                 ></v-select>
               </v-col>
               <v-col
-                cols="12"
-                sm="6"
+                  cols="12"
+                  sm="6"
               >
                 <v-autocomplete
-                  :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
-                  label="Interests"
-                  multiple
+                    :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
+                    label="Interests"
+                    multiple
                 ></v-autocomplete>
               </v-col>
             </v-row>
@@ -252,17 +268,17 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
-            color="blue darken-1"
-            text
-            @click="cacheDialogCompte()"
+              color="blue darken-1"
+              text
+              @click="cacheDialogCompte()"
           >
             Suivant
           </v-btn>
           <v-btn
-            color="blue darken-1"
-            text
-            to="/monEspace.vue"
-            >
+              color="blue darken-1"
+              text
+              to="/monEspace.vue"
+          >
             Save
           </v-btn>
         </v-card-actions>
@@ -272,30 +288,30 @@
   </div>
 </template>
 <script>
-  export default {
-    data () {
-      return {
-        dialogConnexion: false,
-        dialogCompte: false
-      }
-    },
+export default {
+  data() {
+    return {
+      dialogConnexion: false,
+      dialogCompte: false
+    }
+  },
 
-    methods:{
-      showDialogConnectezVous(){
-        this.dialogConnexion = true
-      },
-      showDialogCompte(){
-        this.dialogCompte = true
-      },
-      cacheDialogConnectezVous(){
-        this.dialogConnexion = false
-        
-      },
-      cacheDialogCompte(){
-        this.dialogCompte = false
-      }
+  methods: {
+    showDialogConnectezVous() {
+      this.dialogConnexion = true
+    },
+    showDialogCompte() {
+      this.dialogCompte = true
+    },
+    cacheDialogConnectezVous() {
+      this.dialogConnexion = false
+
+    },
+    cacheDialogCompte() {
+      this.dialogCompte = false
     }
   }
+}
 </script>
 
 
